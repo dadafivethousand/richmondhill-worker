@@ -1,0 +1,21 @@
+name = "richmondhill-worker"
+main = "src/index.js"
+compatibility_date = "2024-12-18"
+compatibility_flags = ["nodejs_compat"]
+
+ 
+
+kv_namespaces = [
+  { binding = "richmondhillleads", id = "2cbf2f2956f34f04b96bcefec81e7723" },
+  { binding = "richmondhillclients", id = "8f78dc93cd1d46b9bd0a53e96b2c4daa" },
+  { binding = "richmondhillkids", id = "30fa90f0324349b4b51ff086e6a5808b" },
+
+ 
+]
+
+[observability]
+enabled = true
+
+ 
+
+# ENV vars should be set via `wrangler secret put`

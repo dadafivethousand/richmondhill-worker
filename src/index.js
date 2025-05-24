@@ -11,10 +11,9 @@ export default {
             const { method, url } = request;
             const pathname = new URL(url).pathname;
 			 if (method === 'POST' && pathname === '/intake-form') {
+   
               return handleIntakeForm(request, env, ctx);
             }
-            
-            
           }
 
 
