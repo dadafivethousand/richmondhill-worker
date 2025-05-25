@@ -40,8 +40,8 @@ export async function handleIntakeForm(request, env, ctx) {
                 <br>
                 <div style="font-family:'Trebuchet MS',sans-serif; color:#383b3e;">
                     <p>Sincerely,</p>
-                    <p><strong>Richmond Hill Jiu-Jitsu Academy</strong></p>
-                    <img src="https://i.imgur.com/b8kPby1.png" alt="Richmond Hill Jiu-Jitsu" width="96" height="43"><br>
+                     
+                    <img src="https://rh-bjj.com/logo-no-background.png" alt="Richmond Hill Jiu-Jitsu" width="96" height="50"><br>
                     <p>📞 647-887-9940<br>
                     ✉️ <a href="mailto:info@rh-bjj.com">info@rh-bjj.com</a><br>
                     🌐 <a href="http://rh-bjj.com" target="_blank">rh-bjj.com</a><br>
