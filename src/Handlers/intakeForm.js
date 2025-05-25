@@ -5,8 +5,9 @@ export async function handleIntakeForm(request, env, ctx) {
     try {
         // Parse the request body
         const formData = await request.json();
+        const timestamp = Date.now().toString(); 
         // Save to KV
-        const key = `lead:${formData.email}}`;
+        const key = `lead:${formData.email}:${timestamp}`;
          
         await saveToKV(env.richmondhillleads, key, formData);
 
