@@ -1,5 +1,8 @@
 import { getCorsHeaders, handleOptionsRequest} from './utils.js';
-import { handleIntakeForm } from './Handlers/intakeForm.js';
+import { handleIntakeForm } from './Handlers/IntakeForm.js';
+import {handleAdultCheckoutSession} from './Handlers/AdultMemberships.js'
+ 
+import { fetchPrices } from './Handlers/AdultMemberships.js';
 
 export default {
   async fetch(request, env, ctx) {
@@ -14,9 +17,13 @@ export default {
    
               return handleIntakeForm(request, env, ctx);
             }
+            else if (method === 'POST' && pathname === '/adult_subscription') {
+              return handleAdultCheckoutSession(request, env, ctx);
+            }
+             else if (method === 'GET' && pathname === '/membership-info') {
+              return fetchPrices(request, env, ctx);
+            }
           }
-
-
         try {
 
             return handleRequest(request, env)

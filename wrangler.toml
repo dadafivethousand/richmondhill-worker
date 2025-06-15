@@ -16,6 +16,10 @@ kv_namespaces = [
 [observability]
 enabled = true
 
+
+
+[vars]
+STRIPE_PRODUCTION_KEY = "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"
  
 
 # ENV vars should be set via `wrangler secret put`
