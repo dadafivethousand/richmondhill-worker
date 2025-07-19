@@ -106,7 +106,7 @@ async function createAdultStripeCheckoutSession(env, timestamp, customerId, firs
    
     } else {
       sessionPayload.mode = "payment";
-      sessionPayload.payment_method_types = ["card", "afterpay_clearpay"];
+      sessionPayload.payment_method_types = ["card", "klarna"];
       sessionPayload["line_items[0][price_data][currency]"] = "cad";
       sessionPayload["line_items[0][price_data][product_data][name]"] = membershipDetails.description;
       sessionPayload["line_items[0][price_data][unit_amount]"] = membershipDetails.price;

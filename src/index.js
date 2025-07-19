@@ -1,8 +1,10 @@
 import { getCorsHeaders, handleOptionsRequest} from './utils.js';
 import { handleIntakeForm } from './Handlers/IntakeForm.js';
 import {handleAdultCheckoutSession} from './Handlers/AdultMemberships.js'
- 
+ import {handleKidCheckoutSession} from './Handlers/KidMemberships.js'
 import { fetchPrices } from './Handlers/AdultMemberships.js';
+import { handleStripeWebhook } from './Handlers/Webhook.js';
+
 
 export default {
   async fetch(request, env, ctx) {
@@ -14,15 +16,22 @@ export default {
             const { method, url } = request;
             const pathname = new URL(url).pathname;
 			 if (method === 'POST' && pathname === '/intake-form') {
-   
               return handleIntakeForm(request, env, ctx);
             }
             else if (method === 'POST' && pathname === '/adult_subscription') {
               return handleAdultCheckoutSession(request, env, ctx);
             }
+               else if (method === 'POST' && pathname === '/kid_subscription') {
+              return handleKidCheckoutSession(request, env, ctx);
+            }
              else if (method === 'GET' && pathname === '/membership-info') {
               return fetchPrices(request, env, ctx);
-            }
+            } else if (method === 'POST' && pathname === '/webhook') {
+              return handleStripeWebhook(request, env, ctx);
+            } 
+            
+
+
           }
         try {
 
